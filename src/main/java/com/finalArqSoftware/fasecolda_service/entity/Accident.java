@@ -19,7 +19,7 @@ public class Accident {
     private Long id;
 
     private String vehiclePlate;
-    private String vehicleType;
+    private String severity;
     private LocalDate date;
 
 }
