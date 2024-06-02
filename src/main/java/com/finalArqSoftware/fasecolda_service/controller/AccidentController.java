@@ -1,6 +1,7 @@
 package com.finalArqSoftware.fasecolda_service.controller;
 
 import com.finalArqSoftware.fasecolda_service.entity.Accident;
+import com.finalArqSoftware.fasecolda_service.response.Response;
 import com.finalArqSoftware.fasecolda_service.service.AccidentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,9 +16,8 @@ public class AccidentController {
     private AccidentService accidentService;
 
     @GetMapping("/{plate}")
-    public ResponseEntity<List<Accident>> getAccidentsByPlate(@PathVariable String plate) {
-        List<Accident> accidents = accidentService.findByPlate(plate);
-        return ResponseEntity.ok(accidents);
+    public ResponseEntity<Response> getAccidentsByPlate(@PathVariable String plate) {
+        return ResponseEntity.ok(accidentService.findByPlate(plate));
     }
 
     @PostMapping
